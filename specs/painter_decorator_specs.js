@@ -41,6 +41,14 @@ describe('Room', function() {
       const actual = decorator.paintLevel();
       assert.strictEqual(actual, 1);
     });
+    it('should be able to calculate total litres in stock', function(){
+      yellow = new PaintCan(20);
+      red = new PaintCan(10);
+      decorator.addPaint(yellow);
+      decorator.addPaint(red);
+      const actual = decorator.paintVolume();
+      assert.strictEqual(actual, 30);
+    })
 
     describe('Paint Can', function(){
       let blue;
@@ -63,6 +71,8 @@ describe('Room', function() {
         red.paint(room)
         assert.strictEqual(red.volume, 10)
       });
+
+
 
     }); //Paint can describe end
   }); // Decorator describe end
