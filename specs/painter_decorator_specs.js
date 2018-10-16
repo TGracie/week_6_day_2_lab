@@ -23,47 +23,48 @@ describe('Room', function() {
   });
 
 
-  describe('Paint Can', function(){
-    let blue;
-    let red;
+  describe('Decorator', function(){
+
+    let decorator;
+
     beforeEach(function(){
-      blue = new PaintCan(10);
-      red = new PaintCan(30);
-    }); // before end
-
-    it('should have a volume', function(){
-      assert.strictEqual(blue.volume, 10);
+      decorator = new Decorator();
     });
 
-    it('should be able to check if it is empty', function(){
-      blue.paint(room)
-      assert.strictEqual(blue.volume, 0)
+    it('Should start without any paint', function(){
+      assert.deepStrictEqual(decorator.paintStock, [])
     });
 
-    it('should be able to empty itself of paint', function(){
-      red.paint(room)
-      assert.strictEqual(red.volume, 10)
+    it('Should be able to add a can of paint to stock', function(){
+      yellow = new PaintCan(20)
+      decorator.addPaint(yellow);
+      const actual = decorator.paintLevel();
+      assert.strictEqual(actual, 1);
     });
 
-  }); //Paint can describe end
+    describe('Paint Can', function(){
+      let blue;
+      let red;
+      beforeEach(function(){
+        blue = new PaintCan(10);
+        red = new PaintCan(30);
+      }); // before end
+
+      it('should have a volume', function(){
+        assert.strictEqual(blue.volume, 10);
+      });
+
+      it('should be able to check if it is empty', function(){
+        blue.paint(room)
+        assert.strictEqual(blue.volume, 0)
+      });
+
+      it('should be able to empty itself of paint', function(){
+        red.paint(room)
+        assert.strictEqual(red.volume, 10)
+      });
+
+    }); //Paint can describe end
+  }); // Decorator describe end
 
 }); // Room Describe end
-
-
-
-
-
-
-describe('Decorator', function(){
-
-  let decorator;
-
-  beforeEach(function(){
-    decorator = new Decorator();
-  });
-
-  it('Should start without any paint', function(){
-    assert.deepStrictEqual(decorator.paintStock, [])
-  });
-
-}); // Decorator describe end
