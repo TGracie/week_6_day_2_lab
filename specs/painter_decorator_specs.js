@@ -8,6 +8,7 @@ describe('Room', function() {
   beforeEach(function() {
     room = new Room(20, "unpainted");
   });
+
   it('should have an area', function(){
     assert.strictEqual(room.area, 20);
   }); // area end
@@ -22,6 +23,18 @@ describe('Room', function() {
   });
 
 }); // Room Describe end
+
+describe('Paint Can', function(){
+  let paintCan;
+  beforeEach(function(){
+    blue = new PaintCan(10);
+  }); // before end
+
+  it('should have a volume', function(){
+    assert.strictEqual(blue.volume, 10);
+  });
+
+}); //Paint can describe end
 
 
 
