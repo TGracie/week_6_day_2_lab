@@ -10,8 +10,18 @@ describe('Room', function() {
   });
   it('should have an area', function(){
     assert.strictEqual(room.area, 20);
+  }); // area end
+
+  it('Should start unpainted', function(){
+    assert.strictEqual(room.status, "unpainted");
+  }); // status check end
+
+  it('should be able to be painted', function(){
+    room.paintRoom();
+    assert.strictEqual(room.status, "painted");
   });
-});
+
+}); // Room Describe end
 
 
 
