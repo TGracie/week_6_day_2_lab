@@ -25,8 +25,10 @@ describe('Room', function() {
 
   describe('Paint Can', function(){
     let blue;
+    let red;
     beforeEach(function(){
       blue = new PaintCan(10);
+      red = new PaintCan(30);
     }); // before end
 
     it('should have a volume', function(){
@@ -36,6 +38,11 @@ describe('Room', function() {
     it('should be able to check if it is empty', function(){
       blue.paint(room)
       assert.strictEqual(blue.volume, 0)
+    });
+
+    it('should be able to empty itself of paint', function(){
+      red.paint(room)
+      assert.strictEqual(red.volume, 10)
     });
 
   }); //Paint can describe end

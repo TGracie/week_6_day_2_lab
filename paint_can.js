@@ -9,7 +9,6 @@ PaintCan.prototype.paint = function(room){
   else {
     this.volume -= room.area;
   }
-
 };
 
 
