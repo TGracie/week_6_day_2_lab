@@ -22,20 +22,25 @@ describe('Room', function() {
     assert.strictEqual(room.status, "painted");
   });
 
+
+  describe('Paint Can', function(){
+    let blue;
+    beforeEach(function(){
+      blue = new PaintCan(10);
+    }); // before end
+
+    it('should have a volume', function(){
+      assert.strictEqual(blue.volume, 10);
+    });
+
+    it('should be able to check if it is empty', function(){
+      blue.paint(room)
+      assert.strictEqual(blue.volume, 0)
+    });
+
+  }); //Paint can describe end
+
 }); // Room Describe end
-
-describe('Paint Can', function(){
-  let paintCan;
-  beforeEach(function(){
-    blue = new PaintCan(10);
-  }); // before end
-
-  it('should have a volume', function(){
-    assert.strictEqual(blue.volume, 10);
-  });
-
-}); //Paint can describe end
-
 
 
 
